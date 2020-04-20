@@ -19,12 +19,10 @@ Adafruit_SSD1306 display(OLED_RESET);
 void setup() {
     display.begin(SSD1306_SWITCHCAPVCC, 0x3c); //initialize I2C addr 0x3c
     display.clearDisplay(); // clears the screen and buffer
-    /*display.drawPixel(0, 0, WHITE);
-    display.drawPixel(127, 63, WHITE);*/
 
-    //display.drawCircle(64, 15, 8, WHITE);
-    //display.fillCircle(64, 32, 30, WHITE);
-    //display.drawTriangle(70, 60, 90, 60, 80, 46, WHITE);
+    display.drawCircle(64, 15, 8, WHITE);
+    display.fillCircle(64, 32, 30, WHITE);
+    display.drawTriangle(70, 60, 90, 60, 80, 46, WHITE);
 
     display.setCursor(0,0);
     display.setTextSize(1);
@@ -40,6 +38,9 @@ void setup() {
     display.setTextSize(1);
     display.setTextColor(WHITE, BLACK);
     display.println("OLED 128x64");
+
+    //display.fillScreen(WHITE);
+    
     
     display.display();
 }
