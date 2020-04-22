@@ -12,9 +12,14 @@ SDA -> A4
 #include <SPI.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>   // Setting screen size in library
+#include <Adafruit_SSD1306.h>   // Setting screen size in library or...
+
+
+#define SCREEN_WIDTH 128 // pixel ความกว้าง
+#define SCREEN_HEIGHT 64 // pixel ความสูง 
+
 #define OLED_RESET 4
-Adafruit_SSD1306 display(OLED_RESET);
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 void setup() {
     display.begin(SSD1306_SWITCHCAPVCC, 0x3c); //initialize I2C addr 0x3c
